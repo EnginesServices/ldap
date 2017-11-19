@@ -12,11 +12,88 @@
       "version": {
         "major": 0,
         "minor": 0,
-        "level": "alpha",
+        "level": "beta",
         "patch": 0
       }
-    }
+    },
+    "software": {
+      "display": {
+        "title": "ldap server",
+        "label": "ldap"
+      }
+    },
+    "timestamp": "2017-11-19T12:25:18+11:00"
   },
   "software": {
+    "base": {
+      "name": "ldap",
+      "publisher_namespace": "EnginesSystem",
+      "type_path": "ldap",
+      "service_handle_field": "cn",
+      "parent_image": "engines/servicebase",
+      "run_as_user": "openldap",
+      "deployment_type": "worker",
+      "memory": {
+        "required": 128,
+        "recommended": 128
+      },
+      "persistent": true
+    },
+    "consumer_params": [
+      {
+        "name": "type",
+        "mandatory": true,
+        "input": {
+          "type": "select",
+          "collection": {
+            "items": {
+              "group": "Group",
+              "ou": "Organizational Unit"
+            }
+          }
+        }
+      },
+      {
+        "name": "parent_engine ",
+        "value": "_Engines_Builder(engine_name) ",
+        "mandatory": true,
+        "immutable": true,
+        "input": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cn",
+        "value": "_Engines_Builder(engine_name)",
+        "immutable": true,
+        "input": {
+          "type": "string",
+          "title": "cn"
+        }
+      }
+    ],
+    "actionators": [
+      {
+        "name": "set_admin_password",
+        "label": "Set LDAP Admin Password",
+        "return_type": "json",
+        "variables": [
+          {
+            "name": "current_password",
+            "input": {
+              "type": "password",
+              "label": "Current Password"
+            }
+          },
+          {
+            "name": "new_password",
+            "input": {
+              "type": "password_with_confirmation",
+              "label": "New Password"
+            }
+          }
+        ]
+      }
+    ]
   }
 }
