@@ -2,8 +2,8 @@
   "schema": {
     "type": "service_blueprint",
     "version": {
-      "major": 1,
-      "minor": 0
+      "major": 0,
+      "minor": 1
     },
     "origin": "Engines Developer Studio 0.2"
   },
@@ -22,7 +22,7 @@
         "label": "ldap"
       }
     },
-    "timestamp": "2017-11-19T12:25:18+11:00"
+    "timestamp": "2018-01-12T12:45:16+11:00"
   },
   "software": {
     "base": {
@@ -31,12 +31,14 @@
       "type_path": "ldap",
       "service_handle_field": "cn",
       "parent_image": "engines/servicebase",
-      "run_as_user": "openldap",
       "deployment_type": "worker",
       "memory": {
         "required": 128,
         "recommended": 128
       },
+      "run_as_user": "openldap"
+    },
+    "disposition": {
       "persistent": true
     },
     "consumer_params": [
@@ -66,6 +68,7 @@
         "name": "cn",
         "value": "_Engines_Builder(engine_name)",
         "immutable": true,
+        "ask_at_build_time": true,
         "input": {
           "type": "string",
           "title": "cn"
