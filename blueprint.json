@@ -22,7 +22,7 @@
         "label": "ldap"
       }
     },
-    "timestamp": "2018-01-12T12:58:07+11:00"
+    "timestamp": "2018-02-14T10:30:19+11:00"
   },
   "software": {
     "base": {
@@ -96,6 +96,26 @@
             }
           }
         ]
+      },
+      {
+        "name": "set_debug_level",
+        "label": "Set Debug Level",
+        "return_type": "none",
+        "variables": [
+          {
+            "name": "debug_level",
+            "value": "0",
+            "input": {
+              "type": "integer",
+              "label": "Debug Level Integer"
+            }
+          }
+        ]
+      },
+      {
+        "name": "get_debug_level",
+        "label": "Show debug level",
+        "return_type": "json"
       }
     ]
   }
