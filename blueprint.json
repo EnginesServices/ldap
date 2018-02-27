@@ -22,7 +22,7 @@
         "label": "ldap"
       }
     },
-    "timestamp": "2018-02-27T14:27:26+11:00"
+    "timestamp": "2018-02-27T19:14:32+11:00"
   },
   "software": {
     "base": {
@@ -137,7 +137,7 @@
         "name": "ldap_password",
         "value": "_EnginesSystem(random(8))",
         "input": {
-          "type": "password_with_confirmation"
+          "type": "password"
         }
       }
     ],
