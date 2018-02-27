@@ -22,7 +22,7 @@
         "label": "ldap"
       }
     },
-    "timestamp": "2018-02-14T10:30:19+11:00"
+    "timestamp": "2018-02-27T13:24:24+11:00"
   },
   "software": {
     "base": {
@@ -41,6 +41,16 @@
     "disposition": {
       "persistent": true
     },
+    "target_environment_variables": [
+      {
+        "variable_name": "password",
+        "environment_variable_name": "ldap_password"
+      },
+      {
+        "variable_name": "ldap_dn",
+        "environment_variable_name": "ldap_dn"
+      }
+    ],
     "consumer_params": [
       {
         "name": "type",
@@ -50,7 +60,8 @@
           "collection": {
             "items": {
               "group": "Group",
-              "ou": "Organizational Unit"
+              "ou": "Organizational Unit",
+              "access": "Ldap Access"
             }
           }
         }
@@ -72,6 +83,61 @@
         "input": {
           "type": "string",
           "title": "cn"
+        }
+      },
+      {
+        "name": "service_name",
+        "immutable": true,
+        "input": {
+          "type": "hidden"
+        }
+      },
+      {
+        "name": "read_access",
+        "mandatory": true,
+        "immutable": true,
+        "input": {
+          "type": "select_with_input",
+          "label": "Read access",
+          "comment": "self always has read access",
+          "collection": {
+            "items": {
+              "all": "by all",
+              "authenticated": "authenticated",
+              "private": "private"
+            }
+          }
+        }
+      },
+      {
+        "name": "write_access",
+        "mandatory": true,
+        "immutable": true,
+        "input": {
+          "type": "select_with_input",
+          "label": "Write access",
+          "comment": "self and admin always has write access",
+          "collection": {
+            "items": {
+              "none": "None",
+              "authentticated": "Authenticated"
+            }
+          }
+        }
+      },
+      {
+        "name": "access_dn",
+        "value": "cn=_EnginesBuilder(engine_name),ou=hosts,ou=Engines,dc=engines,dc=internal",
+        "immutable": true,
+        "input": {
+          "type": "hidden"
+        }
+      },
+      {
+        "name": "ldap_password",
+        "value": "_EnginesSystem(random(8))",
+        "input": {
+          "type": "password_with_confirmation"
         }
       }
     ],
