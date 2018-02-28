@@ -22,7 +22,7 @@
         "label": "ldap"
       }
     },
-    "timestamp": "2018-02-28T17:28:25+11:00"
+    "timestamp": "2018-02-28T17:30:13+11:00"
   },
   "software": {
     "base": {
@@ -80,13 +80,14 @@
       },
       {
         "name": "read_access",
-        "mandatory": true,
         "immutable": true,
+        "ask_at_build_time": true,
         "input": {
           "type": "select_with_input",
           "label": "Read access",
           "comment": "self always has read access",
           "collection": {
+            "include_blank": true,
             "items": {
               "all": "by all",
               "authenticated": "authenticated",
@@ -97,13 +98,14 @@
       },
       {
         "name": "write_access",
-        "mandatory": true,
         "immutable": true,
+        "ask_at_build_time": true,
         "input": {
           "type": "select_with_input",
           "label": "Write access",
           "comment": "self and admin always has write access",
           "collection": {
+            "include_blank": true,
             "items": {
               "none": "None",
               "authentticated": "Authenticated"
@@ -114,7 +116,6 @@
       {
         "name": "access_dn",
         "value": "cn=_Engines_Builder(engine_name),ou=_Engines_Builder(ctype).,ou=hosts,ou=Engines,dc=engines,dc=internal",
-        "mandatory": true,
         "immutable": true,
         "ask_at_build_time": true,
         "input": {
