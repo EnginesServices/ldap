@@ -22,14 +22,14 @@
         "label": "ldap"
       }
     },
-    "timestamp": "2018-02-28T17:43:53+11:00"
+    "timestamp": "2018-03-01T13:25:48+11:00"
   },
   "software": {
     "base": {
       "name": "ldap",
       "publisher_namespace": "EnginesSystem",
       "type_path": "ldap",
-      "service_handle_field": "cn",
+      "service_handle_field": "service_name",
       "parent_image": "engines/servicebase",
       "deployment_type": "worker",
       "memory": {
@@ -80,7 +80,7 @@
       },
       {
         "name": "read_access",
-        "value": "none",
+        "value": "all",
         "immutable": true,
         "ask_at_build_time": true,
         "input": {
@@ -110,7 +110,7 @@
             "include_blank": true,
             "items": {
               "none": "None",
-              "authentticated": "Authenticated"
+              "authenticated": "Authenticated"
             }
           }
         }
@@ -129,6 +129,16 @@
         "value": "_Engines_System(random(8))",
         "input": {
           "type": "password"
+        }
+      },
+      {
+        "name": "service_name",
+        "value": "_Engines_Fields(cn)__Engines_Fields(type)",
+        "mandatory": true,
+        "immutable": true,
+        "ask_at_build_time": true,
+        "input": {
+          "type": "string"
         }
       }
     ],
