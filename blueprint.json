@@ -22,7 +22,7 @@
         "label": "ldap"
       }
     },
-    "timestamp": "2018-03-05T13:39:29+11:00"
+    "timestamp": "2018-03-05T14:10:37+11:00"
   },
   "software": {
     "base": {
@@ -42,6 +42,12 @@
       "persistent": true,
       "consumer_exportable": true
     },
+    "constants": [
+      {
+        "name": "LDAP_HOST",
+        "value": "ldap.engines.internal"
+      }
+    ],
     "target_environment_variables": [
       {
         "variable_name": "ldap_password",
@@ -52,6 +58,12 @@
         "environment_variable_name": "ldap_dn"
       }
     ],
+    "consumers": {
+      "accepts": [
+        "ManagedEngine",
+        "ManagedService"
+      ]
+    },
     "consumer_params": [
       {
         "name": "type",
