@@ -22,7 +22,7 @@
         "label": "ldap"
       }
     },
-    "timestamp": "2018-03-01T18:48:43+11:00"
+    "timestamp": "2018-03-05T13:39:29+11:00"
   },
   "software": {
     "base": {
@@ -39,7 +39,8 @@
       "run_as_user": "openldap"
     },
     "disposition": {
-      "persistent": true
+      "persistent": true,
+      "consumer_exportable": true
     },
     "target_environment_variables": [
       {
