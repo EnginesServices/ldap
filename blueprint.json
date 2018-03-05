@@ -22,7 +22,7 @@
         "label": "ldap"
       }
     },
-    "timestamp": "2018-03-05T14:10:37+11:00"
+    "timestamp": "2018-03-05T14:26:12+11:00"
   },
   "software": {
     "base": {
@@ -145,7 +145,7 @@
         }
       },
       {
-        "name": "service_name",
+        "name": "service_n",
         "value": "_Engines_Fields(cn)__Engines_Fields(type)",
         "mandatory": true,
         "immutable": true,
