@@ -22,7 +22,7 @@
         "label": "ldap"
       }
     },
-    "timestamp": "2018-03-21T11:31:42+11:00"
+    "timestamp": "2018-03-28T10:30:34+11:00"
   },
   "software": {
     "base": {
@@ -46,6 +46,12 @@
       {
         "name": "LDAP_HOST",
         "value": "ldap.engines.internal"
+      }
+    ],
+    "target_environment_variables": [
+      {
+        "variable_name": "cn",
+        "environment_variable_name": "ldap_cn"
       }
     ],
     "consumers": {
