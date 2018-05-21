@@ -22,7 +22,7 @@
         "label": "ldap"
       }
     },
-    "timestamp": "2018-03-28T10:30:34+11:00"
+    "timestamp": "2018-05-21T14:36:25+10:00"
   },
   "software": {
     "base": {
@@ -175,6 +175,28 @@
         "name": "get_debug_level",
         "label": "Show debug level",
         "return_type": "json"
+      },
+      {
+        "name": "schema_update",
+        "label": "update schema",
+        "description": "will move to updater in future",
+        "return_type": "plain_text",
+        "variables": [
+          {
+            "name": "update_id",
+            "mandatory": true,
+            "input": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "update_data",
+            "mandatory": true,
+            "input": {
+              "type": "file"
+            }
+          }
+        ]
       }
     ]
   }
